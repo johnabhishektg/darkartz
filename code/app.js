@@ -22,9 +22,23 @@ themeToggle2.addEventListener('click', ()=>{
     bodyElement.classList.remove('light-theme');
 });
 
+// search-popup
+
+const searchBtn = document.getElementById('search-btn');
+const searchPop = document.getElementById('search-popup');
+const closeBtnMenu = document.querySelector('.close-icon-popup');
 
 
+searchBtn.addEventListener('click', () =>{
+    searchPop.classList.add('activated');
+});
 
+closeBtnMenu.addEventListener('click', () =>{
+    searchPop.classList.remove('activated');
+})
 
-// theme-toggle in ls
-
+window.addEventListener('keyup', (event) =>{
+    if (event.key === "Escape") {
+        searchPop.classList.remove('activated');
+    }
+});
